@@ -30,6 +30,7 @@ const{
 
 router.post('/register', validRegister, registerController)
 router.post('/login', validLogin, loginController)
+
 router.post('/activation', activationController)
 router.put('/forgotpassword', forgotPasswordValidator, forgotController)
 router.put('/resetpassword', resetPasswordValidator, resetController)

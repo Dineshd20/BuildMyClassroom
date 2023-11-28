@@ -41,6 +41,8 @@ const postmodel = new mongoose.Schema({
     },
     file:{
         type: String
+    },tag:{
+        type: String
     }
 },);
 

@@ -16,10 +16,27 @@ const Products = () => {
         axios.get(`http://localhost:8000/api/findallrequest`
         ).then((res) => {
             setAllReguest(res.data);
-           
+            console.log(res.data)
           })
           .catch((err) => {});
       };
+
+
+
+    // const getTagRequest = async () => {
+        
+    //     axios.get(`http://localhost:8000/api/findClothesRequest`
+    //     ).then((res) => {
+    //       setClothesRequest(res.data);
+           
+    //       })
+    //       .catch((err) => {});
+    //   };
+
+    
+   
+
+     
 
 
 // refreshing theh page auto
@@ -31,9 +48,10 @@ const Products = () => {
         return () => clearInterval(interval);
       }, []);
       
-
+      
     
-  
+ 
+      
   return (
 
   //   <div className='min-h-screen bg gray-100 text-gray-900 flex justify-center '>
@@ -125,8 +143,21 @@ const Products = () => {
         <ToastContainer/>
         {isAuth()?<Navbar/>:<Navbarnologin/>}
        
-           
+    
+           <div className='flex flex-col items-center'>
+                        <a
+                            className='w-full max-w-xs font-bold shadow-sm rounded-lg py-3
+                            bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline mt-5'
+                            href='/TagProducts'
+                            target='_self'
+                        >
+                            <span className='m-2'>Search with Tag </span>
+                        </a>
+                    </div>
+   
+         
             <div style={{ height: "130px",}} className="  justify-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10  p-2 mt-10 " >
+            
               
               {allRequest.length != 0 ? (
                 allRequest?.map((request) => (

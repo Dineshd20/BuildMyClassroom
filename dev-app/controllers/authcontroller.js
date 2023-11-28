@@ -348,7 +348,7 @@ exports.readController = (req, res) => {
 
 
 exports.requestItemController = (req, res) => {
-    const { itemname, description,quantity, preferredDate,delivery,location, contact, author ,date,file
+    const { itemname, description,quantity, preferredDate,delivery,location, contact, author ,date,file,tag
     } = req.body;
 
     const request = new Request({
@@ -361,7 +361,8 @@ exports.requestItemController = (req, res) => {
         contact, 
         author,
         date,
-        file
+        file,
+        tag
        
        
     });

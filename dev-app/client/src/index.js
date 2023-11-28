@@ -13,6 +13,7 @@ import Products from './screens/Products';
 import MyPosts from './screens/MyPosts'
 import 'react-toastify/dist/ReactToastify.css'
 import Home from './screens/Home';
+import TagProducts from './screens/TagProducts';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
@@ -27,6 +28,7 @@ root.render(
       <Route path ='/post' exact element={<Post/>}/>
       <Route path ='/findallrequest' exact element={<Products/>}/>
       <Route path ='/myrequests' exact element={<MyPosts/>}/>
+      <Route path ='/TagProducts' exact element={<TagProducts/>}/>
     </Routes>
   </Router>
 );

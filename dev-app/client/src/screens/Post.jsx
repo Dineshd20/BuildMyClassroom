@@ -2,13 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import axios from 'axios';
 import {  isAuth, getCookie, signout } from '../helpers/auth';
-
+import Select from "react-select";
 import{useNavigate} from 'react-router-dom'
 import moment from "moment";
 import Navbar from './Navbar';
 
 
 const Post = () => {
+
+    const options = [
+        { value: "Food", label: "Food" },
+        { value: "Classroom", label: "Classroom" },
+        { value: "Kids", label: "Kids" },
+      ];
+      const [selected, setSelected] = useState("");
+
+      const handleDropdown = (select) => {
+        setSelected(select);
+      };
+
+      const tagname = JSON.stringify(selected);
+      const tag = JSON.parse(tagname).label;
 
     const navigate = useNavigate();
     useEffect(()=>{
@@ -52,7 +66,7 @@ const Post = () => {
         const date= new Date();
         if(itemname,description,quantity,preferredDate,delivery,location,contact ){
                     axios.post(`http://localhost:8000/api/post`,{
-                        itemname,description,quantity,preferredDate,delivery,location,contact, author, date, file
+                        itemname,description,quantity,preferredDate,delivery,location,contact, author, date, file,tag
                     }).then(res=>{
                         setFormData({...formData,
                             itemname:"",
@@ -131,6 +145,17 @@ const Post = () => {
                         value={contact}
                         className=' mb-3 w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white'
                          />
+                        <label>Tags:</label>
+                        <Select
+                            className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-md focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            placeholder="Choose Tags"
+                            options={options}
+                            closeMenuOnSelect={true}
+                            hideSelectedOptions={false}
+                            onChange={handleDropdown}
+                            allowSelectAll={false}
+                            value={selected}
+                        />
                         {/* <input 
                             type="file" 
                             accept=".png, .jpg, .jpeg"
