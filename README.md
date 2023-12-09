@@ -24,3 +24,5 @@ This is an opportunity to help the community to solve their problem via technolo
 
 # Planning Phase Vlog
 https://youtu.be/sUQStz0swpY 
+# Project commercial
+https://www.youtube.com/watch?v=j8jUl-0sgkE 
