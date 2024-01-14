@@ -1,5 +1,10 @@
 # BuildMyClassroom
 
+
+# Project commercial
+https://www.youtube.com/watch?v=j8jUl-0sgkE 
+
+
 # UN SDG(s)
 
 Goal 1: No Poverty <br>
@@ -22,7 +27,5 @@ Currently there are not a whole lot of tools available to solve these problems. 
 This is an opportunity to help the community to solve their problem via technology. Digital habits can help to connect two different communities together. Such a platform will enable teachers to reach a wide audience, in which people with extra supplies can give away to help kids.
 
 
-# Planning Phase Vlog
-https://youtu.be/sUQStz0swpY 
-# Project commercial
-https://www.youtube.com/watch?v=j8jUl-0sgkE 
+
+
